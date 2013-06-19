@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>New Post</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style type="text/css" media="screen">
+
+		</style>
+	</head>
+	<body>
+		<div class="span4 well">
+			<form accept-charset="UTF-8" action="" method="POST">
+				<input type="text" name="subject" value="{{ subject }}" id="subject" class="input-xlarge" value={{ subject }}>
+				<textarea class="span4" id="content" name="content" placeholder="Type in your message" rowxbs="5" value="{{ content }}"></textarea>
+				<button class="btn btn-info" type="submit">Post New Message</button>
+				<p class="help-block">{{ error }}</p>
+			</form>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

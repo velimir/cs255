@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SignUp</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/css/signup.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		{% macro input(name, type='text', label='', value='', error_text='') -%}
+		<div class="control-group {% if error_text %}error{% endif %}">
+			<label class="control-label" for="username">{{ label }}:</label>
+			<div class="controls">
+				<input type="{{ type }}" name="{{name}}" value="{{ value }}" id="{{ name }}" class="input-xlarge">
+				{% if error_text %}
+				<span class="help-block">{{ error_text }}</span>
+				{% endif %}
+			</div>
+		</div>
+		{%- endmacro %}
+
+		<div class="container">
+			<form method="post" class="form-signup">
+				<div class="control-group">
+					<div class="controls">
+						<h2 class="form-signup-heading">Sign Up</h2>
+					</div>
+				</div>
+
+				{{ input('username', 'text', 'Login', username, username_error) }}
+				{{ input('password', 'password', 'Password', error_text=password_error) }}
+				{{ input('verify', 'password', 'Verify', error_text=verify_error) }}
+				{{ input('email', 'text', 'Email', email, error_text=email_error) }}
+				
+				<div class="control-group">
+					<div class="controls">
+						<button class="btn btn-large btn-primary" type="submit">Sign up</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Post</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/css/post.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<div class="container">
+			<h1>{{ post.subject }}</h1>
+			<p>{{ post.content }}</p>
+			<div>
+				<span class="badge badge-success">Posted {{ post.created }}</span>
+			</div> 
+		</div>
+		<div id="gen-time">Queried {{ sec }} seconds ago</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>
